@@ -7,15 +7,15 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
+
 <body>
 
 <!-- ================= HEADER ================= -->
-<header>
-    <h1>KIZACK ELECTRICALS</h1>
+<header class="header">
+    <h1 class="logo">KIZACK ELECTRICALS</h1>
 
     <!-- Hamburger -->
     <div class="menu-toggle" id="menu-toggle">
@@ -29,19 +29,18 @@
         <a href="services.html">Services</a>
     </nav>
 
-    <!-- Cart Icon -->
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cart-count">0</span>
-       <a href="checkout.html" class="cart-link">  Cart
-    <span id="cart-count">0</span></a>
+    <!-- Cart -->
+    <div class="cart-icon">
+        <a href="checkout.html" class="cart-link">
+            🛒 <span id="cart-count">0</span>
+        </a>
     </div>
-   
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
     <div class="slide active" style="background-image:url('edit one.png')"></div>
-    <div class="slide" style="background-image:url('Electrician\ installing\ security\ camera\ outdoors.png')"></div>
+    <div class="slide" style="background-image:url('Electrician installing security camera outdoors.png')"></div>
     <div class="slide" style="background-image:url('image_b5f97a9d.png')"></div>
 
     <div class="hero-text">
@@ -51,8 +50,8 @@
 </section>
 
 <!-- ================= WHATSAPP ================= -->
-<a href="https://wa.me/254715273546?text=Hello%20I%20am%20interested%20in%20your%20services" 
-   target="_blank" 
+<a href="https://wa.me/254715273546?text=Hello%20I%20am%20interested%20in%20your%20services"
+   target="_blank"
    class="whatsapp-btn">
    Chat on WhatsApp
 </a>
@@ -61,24 +60,20 @@
 <section class="section">
     <h2 style="text-align:center;">Our Location</h2>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127668.31051084341!2d35.17879772996797!3d0.5496915193455257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101ae37f9f535%3A0xe2db337df0fc0820!2sEldoret!5e0!3m2!1ssw!2ske!4v1775296487484!5m2!1ssw!2ske" 
-    loading="lazy">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127668.31051084341!2d35.17879772996797!3d0.5496915193455257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101ae37f9f535%3A0xe2db337df0fc0820!2sEldoret!5e0!3m2!1ssw!2ske!4v1775296487484!5m2!1ssw!2ske"
+        loading="lazy">
     </iframe>
 </section>
 
 <!-- ================= CART PANEL ================= -->
- <div id="cart-panel" class="cart-panel">
+<div id="cart-panel" class="cart-panel">
     <ul id="cart-items"></ul>
-    <span id="cart-total"></span>
+    <p id="cart-total"></p>
 </div>
-
-<span id="cart-count"></span>
-
 
 <!-- ================= JS ================= -->
 <script src="script.js"></script>
-
-
 
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* ================= CART ================= */
+
+console.log("SCRIPT LOADED");
+
 /* ================= CART (PERSISTENT) ================= */
 
 // load cart from storage or start empty
@@ -55,21 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* ================= MENU ================= */
+/* ================= MENU (HAMBURGER FIXED) ================= */
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-    }
+    if (!menuToggle || !navMenu) return;
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
 });
+
+/* ================= CHECKOUT ================= */
 function goToCheckout() {
     localStorage.setItem("cart", JSON.stringify(cart));
     window.location.href = "checkout.html";
 }
+
 function loadCheckout() {
     let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -95,18 +100,21 @@ function loadCheckout() {
 if (window.location.pathname.includes("checkout.html")) {
     loadCheckout();
 }
+
+/* ================= ORDER ================= */
 function placeOrder() {
     alert("Order placed successfully! We will contact you on WhatsApp.");
     localStorage.removeItem("cart");
     window.location.href = "index.html";
 }
-document.addEventListener("DOMContentLoaded", () => {
-    updateCart();
-});
+
+/* ================= CART DISPLAY ================= */
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartDiv = document.getElementById("cart-items");
     let total = 0;
+
+    if (!cartDiv) return;
 
     cartDiv.innerHTML = "";
 
@@ -124,5 +132,8 @@ function displayCart() {
         </p>`;
     });
 
-    document.getElementById("total").innerText = "Total: KSh " + total;
+    const totalEl = document.getElementById("total");
+    if (totalEl) {
+        totalEl.innerText = "Total: KSh " + total;
+    }
 }
